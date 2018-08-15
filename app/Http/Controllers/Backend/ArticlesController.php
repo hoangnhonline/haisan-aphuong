@@ -111,15 +111,15 @@ class ArticlesController extends Controller
             
             $new_img = config('phukien.upload_thumbs_path_articles').end($tmpArrImg);
            
-            if($w_img > $h_img){
+            if($w_img/$h_img > 300/200){
 
-                Image::make($origin_img)->resize(null, 275, function ($constraint) {
+                Image::make($origin_img)->resize(null, 200, function ($constraint) {
                         $constraint->aspectRatio();
-                })->crop(275, 275)->save($new_img);
+                })->crop(300, 200)->save($new_img);
             }else{
                 Image::make($origin_img)->resize( 275, null,function ($constraint) {
                         $constraint->aspectRatio();
-                })->crop(275, 275)->save($new_img);
+                })->crop(300, 200)->save($new_img);
             }
         }
 
@@ -251,15 +251,15 @@ class ArticlesController extends Controller
             
             $new_img = config('phukien.upload_thumbs_path_articles').end($tmpArrImg);
            
-            if($w_img > $h_img){
+            if($w_img/$h_img > 300/200){
 
-                Image::make($origin_img)->resize(null, 275, function ($constraint) {
+                Image::make($origin_img)->resize(null, 200, function ($constraint) {
                         $constraint->aspectRatio();
-                })->crop(275, 275)->save($new_img);
+                })->crop(300, 200)->save($new_img);
             }else{
-                Image::make($origin_img)->resize(275, null, function ($constraint) {
+                Image::make($origin_img)->resize(300, null, function ($constraint) {
                         $constraint->aspectRatio();
-                })->crop(275, 275)->save($new_img);
+                })->crop(300, 200)->save($new_img);
             }
         } 
         $model = Articles::find($dataArr['id']);

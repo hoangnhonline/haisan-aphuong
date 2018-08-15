@@ -174,12 +174,12 @@ $bannerArr = DB::table('banner')->where(['object_id' => 1, 'object_type' => 3])-
     </div>
   </div><!-- /.cosmetic -->
 @endforeach
-<!--
+
   <div class="row-blog">
     <div class="container">
       <div class="blog-list">
         <h2 class="page-heading">
-                  <span class="page-heading-title">Tin Tức</span>
+                  <span class="page-heading-title">Cẩm nang</span>
               </h2>
               <div class="blog-list-wapper">
                 <ul class="owl-carousel" data-dots="false" data-loop="true" data-nav = "true" data-margin = "30" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-responsive='{"0":{"items":1},"600":{"items":3},"1000":{"items":4}}'>
@@ -206,5 +206,5 @@ $bannerArr = DB::table('banner')->where(['object_id' => 1, 'object_type' => 3])-
       </div>
     </div>
   </div>
--->
+
 @stop
