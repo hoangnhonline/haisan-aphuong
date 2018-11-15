@@ -96,6 +96,7 @@ $bannerArr = DB::table('banner')->where(['object_id' => 1, 'object_type' => 3])-
   $j = 0;
   ?>
 @foreach($cateParentHot as $parent)
+@if($productArr[$parent->id]->count() > 0)
 <?php $j++; ?>
   <div class="box-products cosmetic">
     <div class="container">
@@ -173,6 +174,7 @@ $bannerArr = DB::table('banner')->where(['object_id' => 1, 'object_type' => 3])-
       </div>
     </div>
   </div><!-- /.cosmetic -->
+  @endif
 @endforeach
 
   <div class="row-blog">

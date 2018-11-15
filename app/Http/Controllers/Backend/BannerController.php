@@ -116,6 +116,7 @@ class BannerController extends Controller
         $dataArr['created_user'] = Auth::user()->id;
 
         $dataArr['updated_user'] = Auth::user()->id;
+		$dataArr['ads_url'] = $dataArr['type'] == 2 ? $dataArr['ads_url'] : null;
         Banner::create($dataArr);
 
         Session::flash('message', 'Tạo mới thành công');
@@ -184,7 +185,7 @@ class BannerController extends Controller
         
         $dataArr['updated_user'] = Auth::user()->id;
         $dataArr['status'] = isset($dataArr['status'])  ? 1 : 0;
-        
+        $dataArr['ads_url'] = $dataArr['type'] == 2 ? $dataArr['ads_url'] : null;
         $model = Banner::find($dataArr['id']);
 
         $model->update($dataArr);
